@@ -65,3 +65,4 @@ C:\Users\Giorgi\Desktop\Patient_Managment_System\Patient_Managment_System\obj\De
 C:\Users\Giorgi\Desktop\Patient_Managment_System\Patient_Managment_System\obj\Debug\net8.0-windows\Patient_.C5CD780B.Up2Date
 C:\Users\Giorgi\Desktop\Patient_Managment_System\Patient_Managment_System\obj\Debug\net8.0-windows\Patient_Managment_System.AddPatientForm.resources
 C:\Users\Giorgi\Desktop\Patient_Managment_System\Patient_Managment_System\obj\Debug\net8.0-windows\Patient_Managment_System.PatientMainForm.resources
+C:\Users\Giorgi\Desktop\Patient_Managment_System\Patient_Managment_System\obj\Debug\net8.0-windows\Patient_Managment_System.sourcelink.json
