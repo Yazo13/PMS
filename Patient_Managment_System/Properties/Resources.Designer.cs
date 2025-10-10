@@ -63,19 +63,9 @@ namespace Patient_Managment_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap green_plus_11975__1_ {
+        internal static System.Drawing.Bitmap green_plus_11975 {
             get {
-                object obj = ResourceManager.GetObject("green-plus-11975 (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap photo_2025_10_08_23_03_34 {
-            get {
-                object obj = ResourceManager.GetObject("photo_2025-10-08_23-03-34", resourceCulture);
+                object obj = ResourceManager.GetObject("green-plus-11975", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,16 +76,6 @@ namespace Patient_Managment_System.Properties {
         internal static System.Drawing.Bitmap red_x_10333 {
             get {
                 object obj = ResourceManager.GetObject("red-x-10333", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Screenshot_2025_10_08_234536 {
-            get {
-                object obj = ResourceManager.GetObject("Screenshot 2025-10-08 234536", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
