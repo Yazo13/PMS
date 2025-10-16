@@ -1,38 +1,58 @@
-# 🏥 Patient Management System (P.M.S.)
+# 🏥 Patient Management System
 
-## 📝 Project Overview
-This project is a Windows Forms application developed in C# for managing patient records. It demonstrates proficiency in object-oriented programming, data handling with MS SQL Server using Stored Procedures, and adherence to specific refactoring requirements (N1 & N2 tasks).
+This is a simple desktop application designed for managing patient records. It provides a main grid view to see a list of all patients and a separate form for adding new patients or editing existing ones.
 
-## ✨ Key Features & Task Completion
-The following features were implemented and/or corrected:
+The user interface is fully localized in **Georgian**.
 
-* **Data Persistence:** All CRUD operations (Create, Read, Update, Delete) are executed via **Stored Procedures** (`Patient_Save`, `Patient_GetAll`, etc.).
-* **Soft Delete (N1):** The 'Delete' operation now uses the `IsDeleted` flag instead of physically removing data from the database.
-* **New Fields (N2):** Integrated `PersonalNumber` and `EMail` fields into the database, application logic, and user interface.
-* **Validation:** Custom validation added for Personal ID (must be 11 digits if provided) and EMail format.
-* **UI/UX:** All grid headers and labels are localized to Georgian.
 
-## 🖼️ Application Demonstration
+### 🖥️ Main Window (PatientMainForm) Description
 
-### Main Patient Grid
-*Confirmation of all required data fields and Georgian headers.*
+### ![Main DataGrid View](images/main_grid.png)
 
-![Main DataGrid View](Images/main_grid.png)
+The main application window is a management dashboard designed for patient data oversight and direct manipulation.
 
-### Patient Addition/Editing Form
-*Showing the integration of the new Personal Number and EMail fields.*
+The central component is a **DataGridView** which displays all active patient records. This view confirms the project's compliance with technical tasks:
+* All column headers are localized to **Georgian** (e.g., ID, პაციენტის გვარი სახელი).
+* Data is loaded efficiently via the `Patient_GetAll` Stored Procedure.
 
-![Add Patient Form](Images/add_form.png)
+The control panel at the top provides essential CRUD functionality:
+* **Add (დამატება):** Creates new records.
+* **Edit (რედაქტირება):** Loads existing data via the `Patient_GetByID` Stored Procedure.
+* **Delete (წაშლა):** Executes the **Soft Delete** logic using the `Patient_SoftDelete` Stored Procedure.
+##
+
+
+### 📝 Secondary Window (Add/Edit Patient Form) Description
+
+### ![Add Form View](images/add_form.png)
+
+
+This form serves a dual purpose: **adding a new patient** and **editing an existing one**. It demonstrates correct data binding, validation, and Stored Procedure usage for both INSERT and UPDATE operations.
+
+* **Data Load Logic:** When used for **editing**, the form loads existing patient details, including `GenderID`, via the `Patient_GetByID` Stored Procedure, and populates the `Gender` dropdown using the `Gender_GetAll` Stored Procedure.
+
+* **Validation:** On almost every field.
+* **Save Logic:** The Save button calls the comprehensive `Patient_Save` Stored Procedure, which handles both inserting new records (`ID` is NULL) and updating existing ones (`ID` is present).
 
 ---
 
-## ⚙️ Tech Stack
-* **Language:** C#
-* **Framework:** .NET Framework (Windows Forms)
-* **Database:** Microsoft SQL Server
-* **Version Control:** Git
+## 🛠️ Technology Stack (Assumed)
 
-## 🚀 Setup Instructions
-1.  **Database:** Execute the provided `full_sql_script.sql` in MS SQL Management Studio to create the `PMS_Database` and all necessary tables/Stored Procedures.
-2.  **Connection String:** Update the connection string (`_connString`) in `PatientMainForm.cs` (or equivalent location) to point to your local SQL Server instance.
-3.  **Run:** Open the solution in Visual Studio and run the project.
+* **Language:** C#
+* **Framework:** Windows Forms (WinForms) 
+* **Database:** SQL Server
+
+---
+
+## 🚀 Getting Started
+
+*(Add instructions here on how to compile, run, or install your application.)*
+
+For example:
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/Yazo13/PMS.git
+    ```
+2.  Open the project file (`.sln` or similar) in your IDE (e.g., Visual Studio).
+3.  Build and run the application.
