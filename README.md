@@ -7,7 +7,7 @@ The user interface is fully localized in **Georgian**.
 
 ### 🖥️ Main Window (PatientMainForm) Description
 
-### ![Main DataGrid View](images/main_grid.png)
+### ![Main DataGrid View](Images/main_grid.png)
 
 The main application window is a management dashboard designed for patient data oversight and direct manipulation.
 
@@ -24,7 +24,7 @@ The control panel at the top provides essential CRUD functionality:
 
 ### 📝 Secondary Window (Add/Edit Patient Form) Description
 
-### ![Add Form View](images/add_form.png)
+### ![Add Form View](Images/add_form.png)
 
 
 This form serves a dual purpose: **adding a new patient** and **editing an existing one**. It demonstrates correct data binding, validation, and Stored Procedure usage for both INSERT and UPDATE operations.
