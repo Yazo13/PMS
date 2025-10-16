@@ -150,12 +150,37 @@ namespace Patient_Managment_System
                     return;
                 }
 
-                // ვალიდაცია ტელეფონის ნომერზე (ახალი, სუფთა Regex)
+                // ვალიდაცია ტელეფონის ნომერზე
                 if (!string.IsNullOrWhiteSpace(textBoxPhone.Text))
                 {
                     if (!Regex.IsMatch(textBoxPhone.Text, @"^5\d{8}$"))
                     {
                         MessageBox.Show("ტელეფონის ნომერი უნდა იწყებოდეს 5-ით და შეიცავდეს 9 ციფრს.", "შეცდომა",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                // ვალიდაცია პირად ნომერზე
+                if (!string.IsNullOrWhiteSpace(textBoxPersonalNumber.Text))
+                {
+                    // ამოწმებს, არის თუ არა ზუსტად 11 ციფრი (და მხოლოდ ციფრები)
+                    if (!Regex.IsMatch(textBoxPersonalNumber.Text, @"^\d{11}$"))
+                    {
+                        MessageBox.Show("პირადი ნომერი უნდა შეიცავდეს ზუსტად 11 ციფრს.", "შეცდომა",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                // ვალიდაცია EMail-ზე
+                if (!string.IsNullOrWhiteSpace(textBoxEMail.Text))
+                {
+                    string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+                    if (!Regex.IsMatch(textBoxEMail.Text, emailPattern))
+                    {
+                        MessageBox.Show("ელ. ფოსტის მისამართი არასწორი ფორმატისაა.", "შეცდომა",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }

@@ -41,6 +41,7 @@
             // dataGridViewPatients
             // 
             dataGridViewPatients.AllowUserToResizeColumns = false;
+            dataGridViewPatients.AllowUserToAddRows = false;
             dataGridViewPatients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridViewPatients.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewPatients.BackgroundColor = SystemColors.Window;
