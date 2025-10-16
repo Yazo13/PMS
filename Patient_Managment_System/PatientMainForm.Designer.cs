@@ -28,46 +28,100 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientMainForm));
-            dataGridView1 = new DataGridView();
+            dataGridViewPatients = new DataGridView();
             buttonAdd = new Button();
             imageList1 = new ImageList(components);
             buttonEdit = new Button();
             buttonDelete = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPatients).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewPatients
             // 
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView1.BackgroundColor = SystemColors.Window;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeight = 29;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView1.GridColor = Color.Black;
-            dataGridView1.Location = new Point(12, 71);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RightToLeft = RightToLeft.No;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.ScrollBars = ScrollBars.None;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(858, 253);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridViewPatients.AllowUserToResizeColumns = false;
+            dataGridViewPatients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridViewPatients.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewPatients.BackgroundColor = SystemColors.Window;
+            dataGridViewPatients.BorderStyle = BorderStyle.None;
+            dataGridViewPatients.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridViewPatients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewPatients.ColumnHeadersHeight = 29;
+            dataGridViewPatients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewPatients.GridColor = Color.Black;
+            dataGridViewPatients.Location = new Point(10, 53);
+            dataGridViewPatients.Margin = new Padding(3, 2, 3, 2);
+            dataGridViewPatients.Name = "dataGridViewPatients";
+            dataGridViewPatients.ReadOnly = true;
+            dataGridViewPatients.RightToLeft = RightToLeft.No;
+            dataGridViewPatients.RowHeadersVisible = false;
+            dataGridViewPatients.RowHeadersWidth = 51;
+            dataGridViewPatients.ScrollBars = ScrollBars.None;
+            dataGridViewPatients.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewPatients.Size = new Size(751, 190);
+            dataGridViewPatients.TabIndex = 0;
+            dataGridViewPatients.CellContentClick += dataGridView1_CellContentClick;
+
+            dataGridViewPatients.AutoGenerateColumns = true;
+            dataGridViewPatients.Columns.Clear();
+            #region Column-ზე სახელების გადათარგმნა
+            dataGridViewPatients.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "ID",
+                HeaderText = "ID",
+                DataPropertyName = "ID",
+                Visible = true,
+                Width = 50
+            });
+
+            // სრული სახელი
+            dataGridViewPatients.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "FullName",
+                HeaderText = "პაციენტის გვარი სახელი",
+                DataPropertyName = "FullName",
+            });
+
+            // დაბადების თარიღი
+            dataGridViewPatients.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Dob",
+                HeaderText = "დაბ თარიღი",
+                DataPropertyName = "Dob"
+            });
+
+            // სქესი
+            dataGridViewPatients.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "GenderName",
+                HeaderText = "სქესი",
+                DataPropertyName = "GenderName"
+            });
+
+            // ტელეფონი
+            dataGridViewPatients.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Phone",
+                HeaderText = "ტელეფონი",
+                DataPropertyName = "Phone"
+            });
+
+            // მისამართი
+            dataGridViewPatients.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Address",
+                HeaderText = "მისამართი",
+                DataPropertyName = "Address"
+            });
+            #endregion
             // 
             // buttonAdd
             // 
@@ -79,10 +133,11 @@
             buttonAdd.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAdd.ImageIndex = 0;
             buttonAdd.ImageList = imageList1;
-            buttonAdd.Location = new Point(14, 12);
+            buttonAdd.Location = new Point(12, 9);
+            buttonAdd.Margin = new Padding(3, 2, 3, 2);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Padding = new Padding(5);
-            buttonAdd.Size = new Size(125, 40);
+            buttonAdd.Padding = new Padding(4);
+            buttonAdd.Size = new Size(109, 32);
             buttonAdd.TabIndex = 3;
             buttonAdd.Text = "დამატება";
             buttonAdd.TextAlign = ContentAlignment.MiddleRight;
@@ -109,10 +164,11 @@
             buttonEdit.ImageAlign = ContentAlignment.MiddleLeft;
             buttonEdit.ImageIndex = 1;
             buttonEdit.ImageList = imageList1;
-            buttonEdit.Location = new Point(135, 12);
+            buttonEdit.Location = new Point(118, 9);
+            buttonEdit.Margin = new Padding(3, 2, 3, 2);
             buttonEdit.Name = "buttonEdit";
-            buttonEdit.Padding = new Padding(5);
-            buttonEdit.Size = new Size(158, 40);
+            buttonEdit.Padding = new Padding(4);
+            buttonEdit.Size = new Size(138, 32);
             buttonEdit.TabIndex = 4;
             buttonEdit.Text = "რედაქტირება";
             buttonEdit.TextAlign = ContentAlignment.MiddleRight;
@@ -129,10 +185,11 @@
             buttonDelete.ImageAlign = ContentAlignment.MiddleLeft;
             buttonDelete.ImageIndex = 2;
             buttonDelete.ImageList = imageList1;
-            buttonDelete.Location = new Point(289, 12);
+            buttonDelete.Location = new Point(253, 9);
+            buttonDelete.Margin = new Padding(3, 2, 3, 2);
             buttonDelete.Name = "buttonDelete";
-            buttonDelete.Padding = new Padding(5);
-            buttonDelete.Size = new Size(106, 40);
+            buttonDelete.Padding = new Padding(4);
+            buttonDelete.Size = new Size(93, 32);
             buttonDelete.TabIndex = 5;
             buttonDelete.Text = "წაშლა";
             buttonDelete.TextAlign = ContentAlignment.MiddleRight;
@@ -141,26 +198,27 @@
             // 
             // PatientMainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(882, 336);
+            ClientSize = new Size(774, 252);
             Controls.Add(buttonDelete);
             Controls.Add(buttonEdit);
             Controls.Add(buttonAdd);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewPatients);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MinimumSize = new Size(900, 0);
+            Margin = new Padding(3, 2, 3, 2);
+            MinimumSize = new Size(790, 39);
             Name = "PatientMainForm";
             Text = "Patient Management System";
             Load += Form1_Load_1;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPatients).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewPatients;
         private Button buttonAdd;
         private Button buttonEdit;
         private Button buttonDelete;

@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPatientForm));
             labelName = new Label();
             textBoxName = new TextBox();
             labelDob = new Label();
@@ -45,100 +46,107 @@
             // 
             // labelName
             // 
-            labelName.Location = new Point(177, 21);
+            labelName.Location = new Point(155, 16);
             labelName.Name = "labelName";
-            labelName.Size = new Size(73, 23);
+            labelName.Size = new Size(64, 17);
             labelName.TabIndex = 0;
             labelName.Text = "სახელი";
             labelName.Click += labelFullName_Click;
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(255, 21);
+            textBoxName.Location = new Point(223, 16);
+            textBoxName.Margin = new Padding(3, 2, 3, 2);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(200, 27);
+            textBoxName.Size = new Size(176, 23);
             textBoxName.TabIndex = 1;
             // 
             // labelDob
             // 
-            labelDob.Location = new Point(146, 188);
+            labelDob.Location = new Point(128, 141);
             labelDob.Name = "labelDob";
-            labelDob.Size = new Size(107, 23);
+            labelDob.Size = new Size(94, 17);
             labelDob.TabIndex = 2;
             labelDob.Text = "დაბ თარიღი";
             // 
             // dateTimePickerDob
             // 
-            dateTimePickerDob.ImeMode = ImeMode.NoControl;
-            dateTimePickerDob.Location = new Point(255, 187);
-            dateTimePickerDob.Name = "dateTimePickerDob";
-            dateTimePickerDob.Size = new Size(200, 27);
-            dateTimePickerDob.TabIndex = 3;
             dateTimePickerDob.Format = DateTimePickerFormat.Short;
+            dateTimePickerDob.ImeMode = ImeMode.NoControl;
+            dateTimePickerDob.Location = new Point(223, 140);
+            dateTimePickerDob.Margin = new Padding(3, 2, 3, 2);
+            dateTimePickerDob.Name = "dateTimePickerDob";
+            dateTimePickerDob.Size = new Size(176, 23);
+            dateTimePickerDob.TabIndex = 3;
             // 
             // labelPhone
             // 
-            labelPhone.Location = new Point(153, 90);
+            labelPhone.Location = new Point(134, 68);
             labelPhone.Name = "labelPhone";
-            labelPhone.Size = new Size(100, 23);
+            labelPhone.Size = new Size(88, 17);
             labelPhone.TabIndex = 6;
             labelPhone.Text = "ტელეფონი";
             // 
             // textBoxPhone
             // 
-            textBoxPhone.Location = new Point(255, 87);
+            textBoxPhone.Location = new Point(223, 65);
+            textBoxPhone.Margin = new Padding(3, 2, 3, 2);
             textBoxPhone.Name = "textBoxPhone";
-            textBoxPhone.Size = new Size(200, 27);
+            textBoxPhone.Size = new Size(176, 23);
             textBoxPhone.TabIndex = 7;
             textBoxPhone.TextChanged += textBoxPhone_TextChanged;
             // 
             // labelAddress
             // 
-            labelAddress.Location = new Point(158, 157);
+            labelAddress.Location = new Point(138, 118);
             labelAddress.Name = "labelAddress";
-            labelAddress.Size = new Size(95, 23);
+            labelAddress.Size = new Size(83, 17);
             labelAddress.TabIndex = 8;
             labelAddress.Text = "მისამართი";
             // 
             // textBoxAddress
             // 
-            textBoxAddress.Location = new Point(255, 154);
+            textBoxAddress.Location = new Point(223, 116);
+            textBoxAddress.Margin = new Padding(3, 2, 3, 2);
             textBoxAddress.Name = "textBoxAddress";
-            textBoxAddress.Size = new Size(200, 27);
+            textBoxAddress.Size = new Size(176, 23);
             textBoxAddress.TabIndex = 9;
             textBoxAddress.Text = "მაგ. თბილისი";
             // 
             // buttonSave
             // 
-            buttonSave.Location = new Point(255, 236);
+            buttonSave.Location = new Point(223, 177);
+            buttonSave.Margin = new Padding(3, 2, 3, 2);
             buttonSave.Name = "buttonSave";
-            buttonSave.Size = new Size(75, 36);
+            buttonSave.Size = new Size(66, 27);
             buttonSave.TabIndex = 10;
             buttonSave.Text = "შენახვა";
             buttonSave.Click += ButtonSave_Click;
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(359, 236);
+            buttonCancel.Location = new Point(314, 177);
+            buttonCancel.Margin = new Padding(3, 2, 3, 2);
             buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(96, 36);
+            buttonCancel.Size = new Size(84, 27);
             buttonCancel.TabIndex = 11;
             buttonCancel.Text = "გაუქმება";
             buttonCancel.Click += ButtonCancel_Click;
             // 
             // labelFamilyName
             // 
-            labelFamilyName.Location = new Point(191, 57);
+            labelFamilyName.Location = new Point(167, 43);
             labelFamilyName.Name = "labelFamilyName";
-            labelFamilyName.Size = new Size(58, 23);
+            labelFamilyName.Size = new Size(51, 17);
             labelFamilyName.TabIndex = 12;
             labelFamilyName.Text = "გვარი";
             // 
             // textBoxFamilyName
             // 
-            textBoxFamilyName.Location = new Point(255, 54);
+            textBoxFamilyName.Location = new Point(223, 40);
+            textBoxFamilyName.Margin = new Padding(3, 2, 3, 2);
             textBoxFamilyName.Name = "textBoxFamilyName";
-            textBoxFamilyName.Size = new Size(200, 27);
+            textBoxFamilyName.Size = new Size(176, 23);
             textBoxFamilyName.TabIndex = 13;
             // 
             // comboBoxGender
@@ -146,25 +154,26 @@
             comboBoxGender.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxGender.FormattingEnabled = true;
             comboBoxGender.Items.AddRange(new object[] { "მამრობითი", "მდედრობითი" });
-            comboBoxGender.Location = new Point(255, 120);
+            comboBoxGender.Location = new Point(223, 90);
+            comboBoxGender.Margin = new Padding(3, 2, 3, 2);
             comboBoxGender.Name = "comboBoxGender";
-            comboBoxGender.Size = new Size(200, 28);
+            comboBoxGender.Size = new Size(176, 23);
             comboBoxGender.TabIndex = 5;
             comboBoxGender.Tag = "";
             // 
             // labelGender
             // 
-            labelGender.Location = new Point(198, 123);
+            labelGender.Location = new Point(173, 92);
             labelGender.Name = "labelGender";
-            labelGender.Size = new Size(55, 23);
+            labelGender.Size = new Size(48, 17);
             labelGender.TabIndex = 14;
             labelGender.Text = "სქესი";
             // 
             // AddPatientForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(653, 311);
+            ClientSize = new Size(571, 233);
             Controls.Add(labelGender);
             Controls.Add(comboBoxGender);
             Controls.Add(labelFamilyName);
@@ -179,6 +188,8 @@
             Controls.Add(textBoxAddress);
             Controls.Add(buttonSave);
             Controls.Add(buttonCancel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "AddPatientForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "პაციენტის დამატება/რედაქტირება";

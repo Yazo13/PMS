@@ -37,30 +37,30 @@ namespace Patient_Managment_System
                         }
                     }
                 }
-                dataGridView1.DataSource = dt;
+                dataGridViewPatients.DataSource = dt;
 
-                #region changing colimn headers to Geo
-                    if (dataGridView1.Columns.Contains("FullName"))
-                    {
-                        dataGridView1.Columns["FullName"].HeaderText = "პაციენტის გვარი სახელი";
-                    }
-                    if (dataGridView1.Columns.Contains("Dob"))
-                    {
-                        dataGridView1.Columns["Dob"].HeaderText = "დაბ თარიღი";
-                    }
-                    if (dataGridView1.Columns.Contains("GenderName"))
-                    {
-                        dataGridView1.Columns["GenderName"].HeaderText = "სქესი";
-                    }
-                    if (dataGridView1.Columns.Contains("Phone"))
-                    {
-                        dataGridView1.Columns["Phone"].HeaderText = "ტელეფონი";
-                    }
-                    if (dataGridView1.Columns.Contains("Address"))
-                    {
-                        dataGridView1.Columns["Address"].HeaderText = "მისამართი";
-                    }
-                #endregion
+                //#region changing colimn headers to Geo
+                //    if (dataGridViewPatients.Columns.Contains("FullName"))
+                //    {
+                //        dataGridViewPatients.Columns["FullName"].HeaderText = "პაციენტის გვარი სახელი";
+                //    }
+                //    if (dataGridViewPatients.Columns.Contains("Dob"))
+                //    {
+                //        dataGridViewPatients.Columns["Dob"].HeaderText = "დაბ თარიღი";
+                //    }
+                //    if (dataGridViewPatients.Columns.Contains("GenderName"))
+                //    {
+                //        dataGridViewPatients.Columns["GenderName"].HeaderText = "სქესი";
+                //    }
+                //    if (dataGridViewPatients.Columns.Contains("Phone"))
+                //    {
+                //        dataGridViewPatients.Columns["Phone"].HeaderText = "ტელეფონი";
+                //    }
+                //    if (dataGridViewPatients.Columns.Contains("Address"))
+                //    {
+                //        dataGridViewPatients.Columns["Address"].HeaderText = "მისამართი";
+                //    }
+                //#endregion
             }
             catch (Exception ex)
             {
@@ -111,14 +111,14 @@ namespace Patient_Managment_System
                     return;
                 }
 
-                if (dataGridView1.SelectedRows.Count == 0)
+                if (dataGridViewPatients.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("გთხოვთ, აირჩიოთ პაციენტი რედაქტირებისთვის.", "ყურადღება",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                int patientId = (int)dataGridView1.SelectedRows[0].Cells["ID"].Value;
+                int patientId = (int)dataGridViewPatients.SelectedRows[0].Cells["ID"].Value;
                 using (AddPatientForm form = new AddPatientForm(_connString, patientId))
                 {
                     if (form.ShowDialog(this) == DialogResult.OK)
@@ -144,14 +144,14 @@ namespace Patient_Managment_System
                     return;
                 }
 
-                if (dataGridView1.SelectedRows.Count == 0)
+                if (dataGridViewPatients.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("გთხოვთ, აირჩიოთ პაციენტი წასაშლელად.", "ყურადღება",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                int patientId = (int)dataGridView1.SelectedRows[0].Cells["ID"].Value;
+                int patientId = (int)dataGridViewPatients.SelectedRows[0].Cells["ID"].Value;
                 DialogResult result = MessageBox.Show("დარწმუნებული ხართ, რომ გსურთ ამ პაციენტის წაშლა?", "დადასტურება",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
