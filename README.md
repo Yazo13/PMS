@@ -17,12 +17,12 @@ The following features were implemented and/or corrected:
 ### Main Patient Grid
 *Confirmation of all required data fields and Georgian headers.*
 
-![Main DataGrid View](images/main_grid.png)
+![Main DataGrid View](Images/main_grid.png)
 
 ### Patient Addition/Editing Form
 *Showing the integration of the new Personal Number and EMail fields.*
 
-![Add Patient Form](images/add_form.png)
+![Add Patient Form](Images/add_form.png)
 
 ---
 
