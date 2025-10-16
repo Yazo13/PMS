@@ -39,8 +39,11 @@ namespace Patient_Managment_System
                 using SqlConnection conn = new(_connString);
                 {
                     conn.Open();
-                    using SqlCommand cmd = new("SELECT GenderID, GenderName FROM dbo.Gender", conn);
-                    {
+                    using SqlCommand cmd = conn.CreateCommand();
+                    {
+                        cmd.CommandText = "dbo.Gender_GetAll"; 
+                        cmd.CommandType = CommandType.StoredProcedure;
+
                         SqlDataAdapter da = new(cmd);
                         DataTable dt = new();
                         da.Fill(dt);
@@ -63,29 +66,30 @@ namespace Patient_Managment_System
                 comboBoxGender.SelectedIndex = 0;
             }
         }
-
         private void LoadPatientData(int patientId)  // პაციენტის მონაცემების ბაზიდან წამოღება
         {
-
             using SqlConnection conn = new(_connString);
             try
             {
                 conn.Open();
-                using SqlCommand cmd = new("SELECT FullName, Dob, GenderID, Phone, Address FROM dbo.Patients WHERE ID = @ID", conn);
+
+                using SqlCommand cmd = conn.CreateCommand();
                 {
+                    cmd.CommandText = "dbo.Patient_GetByID";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
                     cmd.Parameters.AddWithValue("@ID", patientId);
+
                     using SqlDataReader dr = cmd.ExecuteReader();
                     {
                         if (dr.Read())
                         {
-                            // FullName-ის უსაფრთხო გაყოფა (კრიტიკული შესწორება)
                             string fullName = dr["FullName"] as string ?? dr["FullName"]?.ToString() ?? string.Empty;
                             string[] fullNameParts = fullName.Split(new char[] { ' ' }, 2);
 
                             textBoxFamilyName.Text = fullNameParts[0];
                             textBoxName.Text = fullNameParts.Length > 1 ? fullNameParts[1] : string.Empty;
 
-                            // Check for DBNull before accessing DateTime value
                             if (dr["Dob"] is not DBNull)
                             {
                                 dateTimePickerDob.Value = dr.GetDateTime(dr.GetOrdinal("Dob"));
@@ -100,9 +104,15 @@ namespace Patient_Managment_System
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 comboBoxGender.SelectedIndex = 0;
                             }
-                            // Phone და Address-ის უსაფრთხო მიღება (ასევე შესწორებული)
+
+                            // Phone და Address-ის უსაფრთხო მიღება
                             textBoxPhone.Text = dr["Phone"] as string ?? string.Empty;
                             textBoxAddress.Text = dr["Address"] as string ?? string.Empty;
+
+                            
+                            textBoxPersonalNumber.Text = dr["PersonalNumber"] as string ?? string.Empty;
+                            textBoxEMail.Text = dr["EMail"] as string ?? string.Empty;
+
                         }
                     }
                 }
@@ -184,6 +194,9 @@ namespace Patient_Managment_System
                         cmd.Parameters.AddWithValue("@Phone", string.IsNullOrEmpty(textBoxPhone.Text) ? (object)DBNull.Value : textBoxPhone.Text);
                         cmd.Parameters.AddWithValue("@Address", string.IsNullOrEmpty(textBoxAddress.Text) ? (object)DBNull.Value : textBoxAddress.Text);
 
+                        cmd.Parameters.AddWithValue("@PersonalNumber", textBoxPersonalNumber.Text);
+                        cmd.Parameters.AddWithValue("@EMail", textBoxEMail.Text);
+
                         cmd.ExecuteNonQuery();
 
                         this.DialogResult = DialogResult.OK;
@@ -207,5 +220,10 @@ namespace Patient_Managment_System
         private void labelFullName_Click(object sender, EventArgs e) { }
         private void textBoxPhone_TextChanged(object sender, EventArgs e) { }
         private void AddPatientForm_Load(object sender, EventArgs e) { }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

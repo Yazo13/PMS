@@ -66,7 +66,7 @@
             dataGridViewPatients.RowHeadersWidth = 51;
             dataGridViewPatients.ScrollBars = ScrollBars.None;
             dataGridViewPatients.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewPatients.Size = new Size(751, 190);
+            dataGridViewPatients.Size = new Size(1000, 190);
             dataGridViewPatients.TabIndex = 0;
             dataGridViewPatients.CellContentClick += dataGridView1_CellContentClick;
 
@@ -120,6 +120,21 @@
                 Name = "Address",
                 HeaderText = "მისამართი",
                 DataPropertyName = "Address"
+            });
+            // პირადი ნომერი
+            dataGridViewPatients.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "PersonalNumber",
+                HeaderText = "პირადი ნომერი",
+                DataPropertyName = "PersonalNumber"
+            });
+
+            // ელ. ფოსტა
+            dataGridViewPatients.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "EMail",
+                HeaderText = "ელ. ფოსტა",
+                DataPropertyName = "EMail"
             });
             #endregion
             // 
@@ -201,14 +216,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(774, 252);
+            ClientSize = new Size(950, 252);
             Controls.Add(buttonDelete);
             Controls.Add(buttonEdit);
             Controls.Add(buttonAdd);
             Controls.Add(dataGridViewPatients);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
-            MinimumSize = new Size(790, 39);
+            MinimumSize = new Size(1030, 39);
             Name = "PatientMainForm";
             Text = "Patient Management System";
             Load += Form1_Load_1;

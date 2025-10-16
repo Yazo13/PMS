@@ -42,6 +42,10 @@
             textBoxFamilyName = new TextBox();
             comboBoxGender = new ComboBox();
             labelGender = new Label();
+            labelIDNumber = new Label();
+            textBoxPersonalNumber = new TextBox();
+            label1 = new Label();
+            textBoxEMail = new TextBox();
             SuspendLayout();
             // 
             // labelName
@@ -115,7 +119,7 @@
             // 
             // buttonSave
             // 
-            buttonSave.Location = new Point(223, 177);
+            buttonSave.Location = new Point(224, 233);
             buttonSave.Margin = new Padding(3, 2, 3, 2);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(66, 27);
@@ -125,7 +129,7 @@
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(314, 177);
+            buttonCancel.Location = new Point(315, 233);
             buttonCancel.Margin = new Padding(3, 2, 3, 2);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(84, 27);
@@ -169,11 +173,48 @@
             labelGender.TabIndex = 14;
             labelGender.Text = "სქესი";
             // 
+            // labelIDNumber
+            // 
+            labelIDNumber.Location = new Point(105, 170);
+            labelIDNumber.Name = "labelIDNumber";
+            labelIDNumber.Size = new Size(117, 17);
+            labelIDNumber.TabIndex = 15;
+            labelIDNumber.Text = "პირადი ნომერი";
+            labelIDNumber.Click += label1_Click;
+            // 
+            // textBoxPersonalNumber
+            // 
+            textBoxPersonalNumber.Location = new Point(223, 167);
+            textBoxPersonalNumber.Margin = new Padding(3, 2, 3, 2);
+            textBoxPersonalNumber.Name = "textBoxPersonalNumber";
+            textBoxPersonalNumber.Size = new Size(176, 23);
+            textBoxPersonalNumber.TabIndex = 16;
+            // 
+            // label1
+            // 
+            label1.Location = new Point(67, 197);
+            label1.Name = "label1";
+            label1.Size = new Size(155, 17);
+            label1.TabIndex = 17;
+            label1.Text = "ელექტრონული ფოსტა";
+            // 
+            // textBoxEMail
+            // 
+            textBoxEMail.Location = new Point(223, 194);
+            textBoxEMail.Margin = new Padding(3, 2, 3, 2);
+            textBoxEMail.Name = "textBoxEMail";
+            textBoxEMail.Size = new Size(176, 23);
+            textBoxEMail.TabIndex = 18;
+            // 
             // AddPatientForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(571, 233);
+            ClientSize = new Size(571, 314);
+            Controls.Add(label1);
+            Controls.Add(textBoxEMail);
+            Controls.Add(labelIDNumber);
+            Controls.Add(textBoxPersonalNumber);
             Controls.Add(labelGender);
             Controls.Add(comboBoxGender);
             Controls.Add(labelFamilyName);
@@ -217,5 +258,9 @@
         private TextBox textBoxFamilyName;
         private ComboBox comboBoxGender;
         private Label labelGender;
+        private Label labelIDNumber;
+        private TextBox textBoxPersonalNumber;
+        private Label label1;
+        private TextBox textBoxEMail;
     }
 }
